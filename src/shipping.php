@@ -18,7 +18,7 @@ function calculateShippingQuote(int $subtotal, string $area): array
         throw new InvalidArgumentException('Khu vực giao hàng không hợp lệ.');
     }
 
-    $freeShippingThreshold = 500_000;
+    $freeShippingThreshold = 600_000;
     $shippingFee = $subtotal >= $freeShippingThreshold ? 0 : $fees[$area];
 
     return [

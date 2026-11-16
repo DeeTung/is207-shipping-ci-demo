@@ -15,7 +15,7 @@ function expectSame(mixed $actual, mixed $expected, string $case): void
 
 expectSame(calculateShippingQuote(499_999, 'inner')['shipping_fee'], 20_000, 'Inner below threshold');
 expectSame(calculateShippingQuote(499_999, 'outer')['total'], 534_999, 'Outer below threshold');
-expectSame(calculateShippingQuote(600_000, 'inner')['shipping_fee'], 0, 'At threshold');
+expectSame(calculateShippingQuote(500_000, 'inner')['shipping_fee'], 0, 'At threshold');
 expectSame(calculateShippingQuote(800_000, 'outer')['shipping_fee'], 0, 'Above threshold');
 
 foreach ([[-1, 'inner'], [100_000_001, 'inner'], [100_000, 'unknown']] as [$subtotal, $area]) {
